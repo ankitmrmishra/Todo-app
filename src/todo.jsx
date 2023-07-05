@@ -12,7 +12,7 @@ function Todo() {
 
   const fetchTasks = async () => {
   try {
-    const response = await axios.get('https://todo-backend-theta-three.vercel.app/todos');
+    const response = await axios.get('https://todo-backend-git-main-ankitmrmishra.vercel.app/todos');
     setTask(response.data);
   } catch (error) {
     console.log(error);
@@ -29,7 +29,7 @@ function Todo() {
   };
 
   try {
-    const response = await axios.post('https://todo-backend-theta-three.vercel.app/todos', newTask);
+    const response = await axios.post('https://todo-backend-git-main-ankitmrmishra.vercel.app/todos', newTask);
     setTask(prevTasks => [...prevTasks, response.data]);
     setTodo('');
     fetchTasks(); // Fetch updated task list
@@ -41,7 +41,7 @@ function Todo() {
 
  const deleteTask = async (index) => {
     try {
-      await axios.delete(`https://todo-backend-theta-three.vercel.app/todos/${index}`);
+      await axios.delete(`https://todo-backend-git-main-ankitmrmishra.vercel.app/todos/${index}`);
       const newTasks = Task.filter((task) => task.index !== index);
       setTask(newTasks);
     } catch (error) {
